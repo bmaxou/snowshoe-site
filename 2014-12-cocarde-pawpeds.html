@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>www. SnowShoe .fr: Cocarde PawPeds</title>
+<link rel="stylesheet" href="style.css">
+<style>
+#gate-overlay{position:fixed;inset:0;background:#15181a;color:#ece9e0;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:inherit}
+#gate-overlay.hidden{display:none}
+#gate-box{max-width:320px;width:90%;text-align:center;padding:32px 24px;background:#1f2326;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+#gate-box p{margin:0 0 16px;font-size:15px;color:#c9c6bd}
+#gate-box input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid #444;background:#0f1112;color:#ece9e0;font-size:16px;text-align:center;margin-bottom:12px}
+#gate-box button{width:100%;padding:10px 12px;border-radius:6px;border:none;background:#5b7fd6;color:#fff;font-size:15px;cursor:pointer}
+#gate-error{color:#e07a7a;font-size:13px;min-height:18px;margin-top:8px}
+</style>
+</head>
+<body>
+<div id="gate-overlay">
+  <div id="gate-box">
+    <p>Aperçu privé — code d'accès requis</p>
+    <input type="password" id="gate-input" placeholder="Code" inputmode="numeric" autofocus>
+    <button id="gate-btn" type="button">Entrer</button>
+    <div id="gate-error"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = "snowshoe_apercu_ok";
+  var overlay = document.getElementById("gate-overlay");
+  if (localStorage.getItem(KEY) === "1") { overlay.classList.add("hidden"); }
+  function tryUnlock(){
+    var v = document.getElementById("gate-input").value;
+    if (v === "1024") {
+      localStorage.setItem(KEY, "1");
+      overlay.classList.add("hidden");
+    } else {
+      document.getElementById("gate-error").textContent = "Code incorrect";
+    }
+  }
+  document.getElementById("gate-btn").addEventListener("click", tryUnlock);
+  document.getElementById("gate-input").addEventListener("keydown", function(e){
+    if (e.key === "Enter") tryUnlock();
+  });
+})();
+</script>
+<header class="site-header">
+  <a href="index.html" class="site-title">www. SnowShoe .fr</a>
+  <p class="tagline">chats de race SnowShoe, petit élevage parisien en devenir</p>
+</header>
+<div class="layout">
+  <main class="content">
+
+<article class="post">
+  <h1 class="post-title">Cocarde PawPeds</h1>
+  <p class="post-date">Décembre 2014</p>
+  <div class="post-body">
+
+<p>Comme recevant une boîte de chocolats, ne sachant qu’en faire, autant la partager ici.</p>
+<p>Prendre le temps d’apprendre des choses sur ce qu’on aime est un pur bonheur. Surtout parmi des étudiants et des enseignants bienveillants très intéressants. J’ai aimé ces quelques semaines d’études félines.</p>
+<img src="images/G1Ribbon.gif.jpg" alt="" style="max-width:100%;height:auto;width:260px;">
+<p>Tant pis si le diplôme de validation est une cocarde ridicule reçue de PawPeds Academy. Ça fait plaisir. Et puis au moins cette cocarde est reliée à la liste des personnes la méritant : clic dessus pour chercher « Max Bouche » dans la zone FR (France).</p>
+
+  </div>
+  <p class="post-labels">Libellés : <a href="#" class="label">diplome</a> <a href="#" class="label">etudes</a> <a href="#" class="label">pawpeds</a></p>
+</article>
+
+  </main>
+  <aside class="sidebar">
+    <div class="widget">
+      <h4>Mail :</h4>
+      <p><a href="mailto:MailSnowShoe@gmail.com">MailSnowShoe@gmail.com</a></p>
+    </div>
+    <div class="widget">
+      <h4>aucune publicité ici</h4>
+      <img src="images/no-pub.jpg" alt="" style="max-width:100%;height:auto;width:160px;">
+    </div>
+    <div class="widget">
+      <ul class="plain-list">
+        <li><a href="standards.html">Standards</a></li>
+        <li><a href="timeline.html">TimeLine</a></li>
+      </ul>
+    </div>
+    <div class="widget">
+      <h4>Articles les plus consultés</h4>
+      <ul class="plain-list"><li><a href="2015-03-snowshoe-bois-chouette-brigitte-cohu.html">L’incroyable histoire réelle de Jalna</a></li><li><a href="2015-02-jalna-snowshoe-du-bois-de-la-chouette.html">Jalna est morte</a></li><li><a href="2014-12-snowshoe-jalna.html">Jalna</a></li><li><a href="2014-12-cocarde-pawpeds.html">Cocarde PawPeds</a></li><li><a href="2014-11-jalna.html">1ère réservation : Jalna</a></li><li><a href="2014-11-snowshoe-pawpeds.html">Le Départ : PawPeds &amp; SnowShoe</a></li></ul>
+    </div>
+    <div class="widget">
+      <h4>Suivre</h4>
+      <form class="subscribe-form" action="#" method="post">
+        <input type="email" placeholder="Votre adresse mail" required>
+        <button type="submit">S'abonner</button>
+      </form>
+    </div>
+    <div class="widget logo-widget">
+      <img src="images/logo-snowshow.jpg" alt="" style="max-width:100%;height:auto;width:140px;">
+    </div>
+  </aside>
+</div>
+<footer class="site-footer">
+  <p>www.snowshoe.fr &mdash; élevage félin SnowShoe</p>
+</footer>
+</body>
+</html>

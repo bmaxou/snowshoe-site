@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>www. SnowShoe .fr: 1ère réservation : Jalna</title>
+<link rel="stylesheet" href="style.css">
+<style>
+#gate-overlay{position:fixed;inset:0;background:#15181a;color:#ece9e0;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:inherit}
+#gate-overlay.hidden{display:none}
+#gate-box{max-width:320px;width:90%;text-align:center;padding:32px 24px;background:#1f2326;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+#gate-box p{margin:0 0 16px;font-size:15px;color:#c9c6bd}
+#gate-box input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid #444;background:#0f1112;color:#ece9e0;font-size:16px;text-align:center;margin-bottom:12px}
+#gate-box button{width:100%;padding:10px 12px;border-radius:6px;border:none;background:#5b7fd6;color:#fff;font-size:15px;cursor:pointer}
+#gate-error{color:#e07a7a;font-size:13px;min-height:18px;margin-top:8px}
+</style>
+</head>
+<body>
+<div id="gate-overlay">
+  <div id="gate-box">
+    <p>Aperçu privé — code d'accès requis</p>
+    <input type="password" id="gate-input" placeholder="Code" inputmode="numeric" autofocus>
+    <button id="gate-btn" type="button">Entrer</button>
+    <div id="gate-error"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = "snowshoe_apercu_ok";
+  var overlay = document.getElementById("gate-overlay");
+  if (localStorage.getItem(KEY) === "1") { overlay.classList.add("hidden"); }
+  function tryUnlock(){
+    var v = document.getElementById("gate-input").value;
+    if (v === "1024") {
+      localStorage.setItem(KEY, "1");
+      overlay.classList.add("hidden");
+    } else {
+      document.getElementById("gate-error").textContent = "Code incorrect";
+    }
+  }
+  document.getElementById("gate-btn").addEventListener("click", tryUnlock);
+  document.getElementById("gate-input").addEventListener("keydown", function(e){
+    if (e.key === "Enter") tryUnlock();
+  });
+})();
+</script>
+<header class="site-header">
+  <a href="index.html" class="site-title">www. SnowShoe .fr</a>
+  <p class="tagline">chats de race SnowShoe, petit élevage parisien en devenir</p>
+</header>
+<div class="layout">
+  <main class="content">
+
+<article class="post">
+  <h1 class="post-title">1ère réservation : Jalna</h1>
+  <p class="post-date">Novembre 2014</p>
+  <div class="post-body">
+
+<p>Pour mon devoir PawPeds, j'ai échangé par téléphone avec un élevage Français qui débute avec sa 4ème portée en cours. En fait c'est le seul élevage. Un plus ancien ayant arrêté son activité. Et d'autres en construction n'existant pas encore.</p>
+<p>Dimanche 9 novembre, je suis allé en Sologne partager un thé avec cet élevage. Ils y avait d’adorables chatons et du bon thé. J’avais apporté un cake au citron et des doudous pour chats …</p>
+<p>Bref j’ai craqué et réservé une petite femelle «Jalna». Très timide. Tout juste deux mois. Apeurée par les humains. Nous avons convenus qu'ils la gardent en famille jusqu'à 4 mois. Puis la présentent à une expo spéciale chaton, puis je la récupère après (samedi 13 décembre à l'espace Charenton).</p>
+<div class="photo-row">
+<img src="images/141009-Jalna.jpg" alt="" style="max-width:100%;height:auto;width:45%;"><img src="images/141009-jahna-milieu.jpg" alt="" style="max-width:100%;height:auto;width:45%;">
+</div>
+<p class="cap">Jalna — Jalna dans mes bras — Jalna au milieu entre frère et sœur</p>
+<h3>Le papa de Jalna</h3>
+<p>Contre la maison de l'éleveuse, il y a les chatteries les mâles, où Brigitte l'éleveuse va chercher le papa de Jalna sur la photo ci-dessous. Les chatteries des femelles sont plus loin contre un autre mur. Ainsi pas de reproduction incontrôlée. Tout le monde dans sa cage ! Son papa a vraiment un masque de visage magnifique.</p>
+<div class="photo-row">
+<img src="images/jalna-papa-dessus.jpg" alt="" style="max-width:100%;height:auto;width:45%;"><img src="images/Jalna-papa.jpg" alt="" style="max-width:100%;height:auto;width:45%;">
+</div>
+<p>Voici un lien sur cet élevage des parents de Jalna: <a href="http://snowshoesduboisdelachouette.blogspot.fr/">snowshoesduboisdelachouette.blogspot.fr</a></p>
+<p>Jalna est issue de parents étrangers voisin :<br>
+Vanda la maman est Italienne (Vanda Del Doge, Championne de France)<br>
+Teddy le Papa est Anglais (Frostisox Alpha Teddy Bear, Grand Champion International)</p>
+<p>Si une personne a connaissance d'un beau et prometteur chaton mâle bien né, de race SnowShow, souhaitant fonder un foyer d'amour avec Jalna, il ne le regrettera pas !</p>
+
+  </div>
+  <p class="post-labels">Libellés : <a href="#" class="label">chaton</a> <a href="#" class="label">début</a> <a href="#" class="label">femelle</a> <a href="#" class="label">Jalna</a> <a href="#" class="label">snowshoe</a></p>
+</article>
+
+  </main>
+  <aside class="sidebar">
+    <div class="widget">
+      <h4>Mail :</h4>
+      <p><a href="mailto:MailSnowShoe@gmail.com">MailSnowShoe@gmail.com</a></p>
+    </div>
+    <div class="widget">
+      <h4>aucune publicité ici</h4>
+      <img src="images/no-pub.jpg" alt="" style="max-width:100%;height:auto;width:160px;">
+    </div>
+    <div class="widget">
+      <ul class="plain-list">
+        <li><a href="standards.html">Standards</a></li>
+        <li><a href="timeline.html">TimeLine</a></li>
+      </ul>
+    </div>
+    <div class="widget">
+      <h4>Articles les plus consultés</h4>
+      <ul class="plain-list"><li><a href="2015-03-snowshoe-bois-chouette-brigitte-cohu.html">L’incroyable histoire réelle de Jalna</a></li><li><a href="2015-02-jalna-snowshoe-du-bois-de-la-chouette.html">Jalna est morte</a></li><li><a href="2014-12-snowshoe-jalna.html">Jalna</a></li><li><a href="2014-12-cocarde-pawpeds.html">Cocarde PawPeds</a></li><li><a href="2014-11-jalna.html">1ère réservation : Jalna</a></li><li><a href="2014-11-snowshoe-pawpeds.html">Le Départ : PawPeds &amp; SnowShoe</a></li></ul>
+    </div>
+    <div class="widget">
+      <h4>Suivre</h4>
+      <form class="subscribe-form" action="#" method="post">
+        <input type="email" placeholder="Votre adresse mail" required>
+        <button type="submit">S'abonner</button>
+      </form>
+    </div>
+    <div class="widget logo-widget">
+      <img src="images/logo-snowshow.jpg" alt="" style="max-width:100%;height:auto;width:140px;">
+    </div>
+  </aside>
+</div>
+<footer class="site-footer">
+  <p>www.snowshoe.fr &mdash; élevage félin SnowShoe</p>
+</footer>
+</body>
+</html>
