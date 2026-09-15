@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>www. SnowShoe .fr</title>
+<link rel="stylesheet" href="style.css">
+<style>
+#gate-overlay{position:fixed;inset:0;background:#15181a;color:#ece9e0;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:inherit}
+#gate-overlay.hidden{display:none}
+#gate-box{max-width:320px;width:90%;text-align:center;padding:32px 24px;background:#1f2326;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+#gate-box p{margin:0 0 16px;font-size:15px;color:#c9c6bd}
+#gate-box input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid #444;background:#0f1112;color:#ece9e0;font-size:16px;text-align:center;margin-bottom:12px}
+#gate-box button{width:100%;padding:10px 12px;border-radius:6px;border:none;background:#5b7fd6;color:#fff;font-size:15px;cursor:pointer}
+#gate-error{color:#e07a7a;font-size:13px;min-height:18px;margin-top:8px}
+</style>
+</head>
+<body>
+<div id="gate-overlay">
+  <div id="gate-box">
+    <p>Aperçu privé — code d'accès requis</p>
+    <input type="password" id="gate-input" placeholder="Code" inputmode="numeric" autofocus>
+    <button id="gate-btn" type="button">Entrer</button>
+    <div id="gate-error"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = "snowshoe_apercu_ok";
+  var overlay = document.getElementById("gate-overlay");
+  if (localStorage.getItem(KEY) === "1") { overlay.classList.add("hidden"); }
+  function tryUnlock(){
+    var v = document.getElementById("gate-input").value;
+    if (v === "1024") {
+      localStorage.setItem(KEY, "1");
+      overlay.classList.add("hidden");
+    } else {
+      document.getElementById("gate-error").textContent = "Code incorrect";
+    }
+  }
+  document.getElementById("gate-btn").addEventListener("click", tryUnlock);
+  document.getElementById("gate-input").addEventListener("keydown", function(e){
+    if (e.key === "Enter") tryUnlock();
+  });
+})();
+</script>
+<header class="site-header">
+  <a href="index.html" class="site-title">www. SnowShoe .fr</a>
+  <p class="tagline">chats de race SnowShoe, petit élevage parisien en devenir</p>
+</header>
+<div class="layout">
+  <main class="content">
+
+<article class="post">
+  <h2 class="post-title"><a href="2015-03-snowshoe-bois-chouette-brigitte-cohu.html">L’incroyable histoire réelle de Jalna</a></h2>
+  <p class="post-date">Mars 2015</p>
+  <div class="post-body">
+<p class="video-link"><a href="https://www.youtube.com/watch?v=54l2qjKALp4" target="_blank" rel="noopener">clic ici pour voir le film en plein écran</a></p><div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/54l2qjKALp4" title="YouTube video" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+  <p class="post-labels">Libellés : <a href="#" class="label">Eleveur</a> <a href="#" class="label">Jalna</a> <a href="#" class="label">race</a> <a href="#" class="label">Santé</a> <a href="#" class="label">snowshoe</a></p>
+</article>
+
+<hr class='post-sep'>
+
+<article class="post">
+  <h2 class="post-title"><a href="2015-02-jalna-snowshoe-du-bois-de-la-chouette.html">Jalna est morte</a></h2>
+  <p class="post-date">Février 2015</p>
+  <div class="post-body">
+
+<p>Jalna est morte aujourd'hui comme sa sœur la semaine dernière.</p>
+<p>Le véto va la piquer puis la faire incinérer aujourdhui.<br>
+J’ai pas tout compris, sous le choc en apprenant la nouvelle, il dois me donner des papiers plus tard et m’expliquer.<br>
+J’ai juste retenu qu’il aurait fallu tester et se renseigner parce que les visites classiques chez le vétérinaire ne détectent pas ça, mais elle était de toute manière condamnée par la PIF (péritonite Infectieuse Feline) comme sa sœur dans tous les cas.<br>
+Plutôt que des images glauques de ces derniers instants voici son dernier film.<br>
+Je n’ai pas de mots. Je suis sidéré. Ma peine est immense. Je la cherche partout. C’est horrible</p>
+<p><em><span class="video-link-inline"><a href="https://www.youtube.com/watch?v=KmbkNU73meI" target="_blank" rel="noopener">clic ici pour voir le film en plein écran</a></span><div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/KmbkNU73meI" title="YouTube video" frameborder="0" allowfullscreen loading="lazy"></iframe></div></em></p>
+<p>La suite ? Je ne la connais pas. Mais vous pouvez laisser votre mail sur la liste de suivi automatique du blog et vous serez alors informé à la prochaine publication.</p>
+<p>J'ai ré-ouvert les commentaires du blog.<br>
+Merci pour vos condoléances ici que je relirai au bon moment.</p>
+
+  </div>
+  <p class="post-labels">Libellés : <a href="#" class="label">Jalna</a></p>
+</article>
+
+<hr class='post-sep'>
+
+<article class="post">
+  <h2 class="post-title"><a href="2014-12-snowshoe-jalna.html">Jalna</a></h2>
+  <p class="post-date">Décembre 2014</p>
+  <div class="post-body">
+
+<p>Bonnes fêtes de fin d'année et bonne année à venir par avance de la part de Jalna 4 mois arrivée hier.</p>
+<img src="images/141213-juges-tit.jpg" alt="" style="max-width:100%;height:auto;"><img src="images/141213-Jalna-tit.jpg" alt="" style="max-width:100%;height:auto;">
+<h3>Hier</h3>
+<p>Hier nous étions le 13 décembre.<br>
+Hier Jalna gagna un titre dans une exposition.<br>
+Hier Jalna quitta sa famille chat et éleveur.<br>
+Hier Jalna découvrit son nouveau chez elle.</p>
+<img src="images/141312-Jalna-primee.jpg" alt="" style="max-width:100%;height:auto;"><img src="images/141213-Jalna-1er-jour-3-tit.jpg" alt="" style="max-width:100%;height:auto;">
+<h3>Aujourd'hui</h3>
+<p>Aujourd'hui, nous sommes le 14 décembre.<br>
+Aujourd'hui c'est l'anniversaire de Jalna : 4 mois.</p>
+<img src="images/141213-sapin-2-tit.jpg" alt="" style="max-width:100%;height:auto;">
+<h3>Demain</h3>
+<p>Demain ? Pour savoir, suivez ce blog (en bas de page).</p>
+<p><em><span class="video-link-inline"><a href="https://www.youtube.com/watch?v=MbGofpg3y4g" target="_blank" rel="noopener">clic ici pour voir le film en plein écran</a></span><div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/MbGofpg3y4g" title="YouTube video" frameborder="0" allowfullscreen loading="lazy"></iframe></div></em></p>
+
+  </div>
+  <p class="post-labels">Libellés : <a href="#" class="label">Anniversaire</a> <a href="#" class="label">chaton</a> <a href="#" class="label">Cocarde</a> <a href="#" class="label">Concours</a> <a href="#" class="label">Exposition</a> <a href="#" class="label">femelle</a> <a href="#" class="label">Jalna</a></p>
+</article>
+
+<hr class='post-sep'>
+
+<article class="post">
+  <h2 class="post-title"><a href="2014-12-cocarde-pawpeds.html">Cocarde PawPeds</a></h2>
+  <p class="post-date">Décembre 2014</p>
+  <div class="post-body">
+
+<p>Comme recevant une boîte de chocolats, ne sachant qu’en faire, autant la partager ici.</p>
+<p>Prendre le temps d’apprendre des choses sur ce qu’on aime est un pur bonheur. Surtout parmi des étudiants et des enseignants bienveillants très intéressants. J’ai aimé ces quelques semaines d’études félines.</p>
+<img src="images/G1Ribbon.gif.jpg" alt="" style="max-width:100%;height:auto;width:260px;">
+<p>Tant pis si le diplôme de validation est une cocarde ridicule reçue de PawPeds Academy. Ça fait plaisir. Et puis au moins cette cocarde est reliée à la liste des personnes la méritant : clic dessus pour chercher « Max Bouche » dans la zone FR (France).</p>
+
+  </div>
+  <p class="post-labels">Libellés : <a href="#" class="label">diplome</a> <a href="#" class="label">etudes</a> <a href="#" class="label">pawpeds</a></p>
+</article>
+
+<hr class='post-sep'>
+
+<article class="post">
+  <h2 class="post-title"><a href="2014-11-jalna.html">1ère réservation : Jalna</a></h2>
+  <p class="post-date">Novembre 2014</p>
+  <div class="post-body">
+
+<p>Pour mon devoir PawPeds, j'ai échangé par téléphone avec un élevage Français qui débute avec sa 4ème portée en cours. En fait c'est le seul élevage. Un plus ancien ayant arrêté son activité. Et d'autres en construction n'existant pas encore.</p>
+<p>Dimanche 9 novembre, je suis allé en Sologne partager un thé avec cet élevage. Ils y avait d’adorables chatons et du bon thé. J’avais apporté un cake au citron et des doudous pour chats …</p>
+<p>Bref j’ai craqué et réservé une petite femelle «Jalna». Très timide. Tout juste deux mois. Apeurée par les humains. Nous avons convenus qu'ils la gardent en famille jusqu'à 4 mois. Puis la présentent à une expo spéciale chaton, puis je la récupère après (samedi 13 décembre à l'espace Charenton).</p>
+<div class="photo-row">
+<img src="images/141009-Jalna.jpg" alt="" style="max-width:100%;height:auto;width:45%;"><img src="images/141009-jahna-milieu.jpg" alt="" style="max-width:100%;height:auto;width:45%;">
+</div>
+<p class="cap">Jalna — Jalna dans mes bras — Jalna au milieu entre frère et sœur</p>
+<h3>Le papa de Jalna</h3>
+<p>Contre la maison de l'éleveuse, il y a les chatteries les mâles, où Brigitte l'éleveuse va chercher le papa de Jalna sur la photo ci-dessous. Les chatteries des femelles sont plus loin contre un autre mur. Ainsi pas de reproduction incontrôlée. Tout le monde dans sa cage ! Son papa a vraiment un masque de visage magnifique.</p>
+<div class="photo-row">
+<img src="images/jalna-papa-dessus.jpg" alt="" style="max-width:100%;height:auto;width:45%;"><img src="images/Jalna-papa.jpg" alt="" style="max-width:100%;height:auto;width:45%;">
+</div>
+<p>Voici un lien sur cet élevage des parents de Jalna: <a href="http://snowshoesduboisdelachouette.blogspot.fr/">snowshoesduboisdelachouette.blogspot.fr</a></p>
+<p>Jalna est issue de parents étrangers voisin :<br>
+Vanda la maman est Italienne (Vanda Del Doge, Championne de France)<br>
+Teddy le Papa est Anglais (Frostisox Alpha Teddy Bear, Grand Champion International)</p>
+<p>Si une personne a connaissance d'un beau et prometteur chaton mâle bien né, de race SnowShow, souhaitant fonder un foyer d'amour avec Jalna, il ne le regrettera pas !</p>
+
+  </div>
+  <p class="post-labels">Libellés : <a href="#" class="label">chaton</a> <a href="#" class="label">début</a> <a href="#" class="label">femelle</a> <a href="#" class="label">Jalna</a> <a href="#" class="label">snowshoe</a></p>
+</article>
+
+<hr class='post-sep'>
+
+<article class="post">
+  <h2 class="post-title"><a href="2014-11-snowshoe-pawpeds.html">Le Départ : PawPeds &amp; SnowShoe</a></h2>
+  <p class="post-date">Novembre 2014</p>
+  <div class="post-body">
+
+<h3>PawPeds le site internet</h3>
+<p>PawPeds est né en l’an 2000 (<a href="http://pawpeds.com">pawpeds.com</a>). C’est un site d'information sur l'histoire des chats de race, les programmes de santé coordonnés mondiaux, et l'éducation des éleveurs. C’est aussi une base de données mondiale sur les pédigrées des différentes races qui permet de calculer le coefficient de consanguinité et d'analyser un pedigree.</p>
+<h3>PawPeds l’académie</h3>
+<p>Pawpeds c’est également une académie du chat à laquelle j’ai été un heureux participant (<a href="http://pawpeds.com/pawacademy">pawpeds.com/pawacademy</a>). Chaque semaine, il y a des choses à lire et des exercices à rendre. Pour la quatrième semaine du cours G1 en français, il y a 73 chapitres à lire et deux exercices. La question 4.2 comporte cinq point et notamment la question - Rédigez un texte relatif à l'origine d'une race et son évolution jusqu'à aujourd'hui, ce devoir peut être réalisé seul ou en petit groupe de deux ou trois personnes ...</p>
+<h3>Le devoir à rendre à Pawpeds</h3>
+<p>En discutant sur facebook, les correcteurs ont demandé à ce que cela soit une race que l’on ne connaît pas ou peu. J’ai alors passé une soirée à regarder toutes les races. Puis choisissant le SnowShoe, j’ai demandé si quelqu’un voulait traiter cette race avec moi. Il y avait des races retenues très intéressantes. Certaines en cours de création n’existant pas encore, d’autres avec des chats peu ordinaires : des oreilles étranges, des poils frisés, parfois sans poils, etc. Personne n’a été intéressé par ma race et j’ai donc traité ce sujet seul.</p>
+<p>Voici quelques extraits de ma réponse à ce devoir :</p>
+<img src="images/snowshoe-devoir.jpg" alt="" style="max-width:100%;height:auto;">
+<p>Une race de chat, c’est une histoire qui remonte le temps. De la race d’aujourd’hui à celle d’hier présentée pour la première fois. On remonte aux premières reconnaissances par les associations de chat. On remonte au premier héro qui l’a découverte, ou encore aux premiers écris sur ce félin. Voilà où naît l’origine géographique et le mythe d’une race.</p>
+<p>Il existe néanmoins quelques rares exceptions où l’origine du félin est parfaitement maîtrisée et reconnue dans le cadre de races créées par l’homme. Est-ce mieux ou moins bien ?</p>
+<p>De tels chats ne sont alors pas d’étonnants mystères à découvrir. Mais le fruit d’un rêve humain du chat idéal, une création qui ne déçoit pas. Ici pas de maladies imprévisibles, pas de faiblesses comportementales, pas de vices cachés intergénérationnels qui resurgissent, bref pas de surprise. On est en face du chat idéal qui ne triche pas sur ses qualités, puisqu’il a été créé pour ça. Un tel chat existe. Sa race se nomme le SnowShoe.</p>
+<p>En grec Philos est amour, et Adelphos le frère. Le nom de Philadelphie signifie amitié fraternelle. De ce centre historique, culturel et artistique majeur des États-Unis, situé entre NewYork et Washington, est né dans les années 60 la race SnowShoe. Et c’est en effet un modèle d’amitié fraternelle entre humain et félin.</p>
+<p>Alors ce chat idéal, comment est-il donc ? Les qualificatifs qui suivent sont les mots officiels de sa race.</p>
+<p>Trois tailles selon le Loof. Et bien le chat idéal est … Moyen pour un poids félin classique de trois à cinq kilos. Ses yeux sont bleus. Il existe trois types de comportement pour un chat : le paisible (trop absent ?), le démonstratif (trop présent ?), et le sentimental (le parfait complice de l’humain). Le SnowShoe est un sentimental. Côté toilettage, c’est simple et pratique : il n’en réclame aucun ! Sa fourrure est courte et très douce et soyeuse. Les contours de sa tête sont arrondis, ses yeux et plus généralement son corps est harmonieusement proportionné. Celui qui cherche de grandes oreilles ou d’autres singularités corporelles se tournera ailleurs que vers la race idéale de la normalité. Le SnowShoe est musclé, agile, tendre, équilibré, cool, élégant. Ce ne sont pas des mots commerciaux mais bien ceux qui le décrivent officiellement. Toujours selon le LOOF, les enfants n’ont rien à redouter de lui et c’est le chat idéal pour un écrivain.</p>
+<p>Côté robe, le SnowShoe est un colourpoint, ce qui veut dire que le bout des pattes, la queue et sa bouille sont plutôt d’une couleur sombre pour un corps plus ou moins panaché de blanc. Les couleurs sont seal (noir), bleu (gris), chocolat (brun) ou lilas point (beige rosé très pale). Mais son extraordinaire signe distinctif est bien ses pieds blancs, toujours, d’où son nom SnowShoe (soulier de neige). Un autre signe distinctif est un "V" inversé en blanc requis entre les yeux.</p>
+<p>Il est, cette fois selon l’encyclopédie, extrêmement vif, s’entend bien avec les autres animaux, avec un caractère bien trempé. Joueur et bon compagnon des enfants, il est doux, «très affectueux», fidèle et très attaché à son propriétaire. C’est un des chats les plus intelligents qui s’adapte facilement, des vidéos sur internet de parcours d’agility de SnowShoes montrent bien ceci.</p>
+<p>On connaît parfaitement les origines du chat idéal SnowShoe issu de trois races : l’Oriental Siamois, l’européen (comme son nom ne l’indique pas) Sacré de Birmanie, et l’American Shorthair. Si le SnowShoe n’hérite pas de la fragilité des Siamois au taux élevé de mortalité, ni de leur tête pointue. Il n’a pas pris non plus les poils plus longs du sacré de Birmanie qui sont un petit calvaire d’entretien. Il n’a pas non plus le côté rustique aux poils un peu crépus et rêches de l’American Shorthair. Mais il possède de ce dernier l’athlétique américain joueur et chasseur, grand ami de l’homme, qui protégeait ses stocks de céréales des rongeurs ; il prend du Sacré de Birmanie sa douce affection et son côté sociable très adaptable ; de même du Siamois, il prend le caractère de ce fin asiatique si intelligent et collant aux humains …</p>
+<p>Voilà d’où vient et ce qu’est aujourd’hui le SnowShoe : un bon chat attachant qui n’a rien d’exceptionnel si ce n’est d’être exempt de défaut, et où chaque spécimen est unique contrairement aux races où ils sont identiques (siamois, chartreux …)</p>
+<p>Ce devoir a été envoyé dimanche 2 novembre. Et il a été validé deux jours plus tard par Mari Ambra, l’une des passionnantes enseignantes de l’académie PawPeds.</p>
+
+  </div>
+  <p class="post-labels">Libellés : <a href="#" class="label">début</a> <a href="#" class="label">études</a> <a href="#" class="label">pawpeds</a> <a href="#" class="label">race</a> <a href="#" class="label">snowshoe</a></p>
+</article>
+
+  </main>
+  <aside class="sidebar">
+    <div class="widget">
+      <h4>Mail :</h4>
+      <p><a href="mailto:MailSnowShoe@gmail.com">MailSnowShoe@gmail.com</a></p>
+    </div>
+    <div class="widget">
+      <h4>aucune publicité ici</h4>
+      <img src="images/no-pub.jpg" alt="" style="max-width:100%;height:auto;width:160px;">
+    </div>
+    <div class="widget">
+      <ul class="plain-list">
+        <li><a href="standards.html">Standards</a></li>
+        <li><a href="timeline.html">TimeLine</a></li>
+      </ul>
+    </div>
+    <div class="widget">
+      <h4>Articles les plus consultés</h4>
+      <ul class="plain-list"><li><a href="2015-03-snowshoe-bois-chouette-brigitte-cohu.html">L’incroyable histoire réelle de Jalna</a></li><li><a href="2015-02-jalna-snowshoe-du-bois-de-la-chouette.html">Jalna est morte</a></li><li><a href="2014-12-snowshoe-jalna.html">Jalna</a></li><li><a href="2014-12-cocarde-pawpeds.html">Cocarde PawPeds</a></li><li><a href="2014-11-jalna.html">1ère réservation : Jalna</a></li><li><a href="2014-11-snowshoe-pawpeds.html">Le Départ : PawPeds &amp; SnowShoe</a></li></ul>
+    </div>
+    <div class="widget">
+      <h4>Suivre</h4>
+      <form class="subscribe-form" action="#" method="post">
+        <input type="email" placeholder="Votre adresse mail" required>
+        <button type="submit">S'abonner</button>
+      </form>
+    </div>
+    <div class="widget logo-widget">
+      <img src="images/logo-snowshow.jpg" alt="" style="max-width:100%;height:auto;width:140px;">
+    </div>
+  </aside>
+</div>
+<footer class="site-footer">
+  <p>www.snowshoe.fr &mdash; élevage félin SnowShoe</p>
+</footer>
+</body>
+</html>
