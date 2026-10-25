@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /m/
+Sitemap: https://snowshoe.fr/sitemap.xml
