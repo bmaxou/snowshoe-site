@@ -32,7 +32,6 @@ jobs:
             **/.git*/**
             indexnow.py
             ajouter_mesure.py
-            robots-ferme.txt
 
       - name: Prevenir Bing des pages nouvelles ou modifiees (IndexNow, seulement quand snowshoe.fr est servi par ce site)
         continue-on-error: true
