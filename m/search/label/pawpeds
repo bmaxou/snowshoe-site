@@ -408,29 +408,8 @@ margin-left: 32px;
 
 <link href='https://snowshoe.fr/search/label/pawpeds' rel='canonical'/>
 <meta content='https://snowshoe.fr/search/label/pawpeds' property='og:url'/>
-<meta name="robots" content="noindex, nofollow">
 </head>
 <body class='loading mobile variant-simplysimple'>
-<style>
-#gate-overlay{position:fixed;left:0;top:0;right:0;bottom:0;background:#15181a;color:#ece9e0;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif}
-#gate-overlay.hidden{display:none}
-#gate-box{max-width:320px;width:90%;text-align:center;padding:32px 24px;background:#1f2326;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
-#gate-box p{margin:0 0 16px;font-size:15px;color:#c9c6bd}
-#gate-box input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid #444;background:#0f1112;color:#ece9e0;font-size:16px;text-align:center;margin-bottom:12px}
-#gate-box button{width:100%;padding:10px 12px;border-radius:6px;border:none;background:#5b7fd6;color:#fff;font-size:15px;cursor:pointer}
-#gate-error{color:#e07a7a;font-size:13px;min-height:18px;margin-top:8px}
-</style>
-<div id="gate-overlay"><div id="gate-box"><p>Aperçu privé — code d'accès requis</p><input type="password" id="gate-input" placeholder="Code" inputmode="numeric"><button id="gate-btn" type="button">Entrer</button><div id="gate-error"></div></div></div>
-<script>
-(function(){
-  var KEY="snowshoe_apercu_ok", ov=document.getElementById("gate-overlay");
-  try{ if(localStorage.getItem(KEY)==="1"){ ov.className="hidden"; } }catch(e){}
-  function go(){ if(document.getElementById("gate-input").value==="1024"){ try{localStorage.setItem(KEY,"1");}catch(e){} ov.className="hidden"; } else { document.getElementById("gate-error").textContent="Code incorrect"; } }
-  document.getElementById("gate-btn").addEventListener("click",go);
-  document.getElementById("gate-input").addEventListener("keydown",function(e){ if(e.key==="Enter") go(); });
-})();
-</script>
-
 <div class='navbar no-items section' id='navbar' name='Navbar'>
 </div>
 <div itemscope='itemscope' itemtype='http://schema.org/Blog' style='display: none;'>
