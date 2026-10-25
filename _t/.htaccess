@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteCond %{QUERY_STRING} (^|&)m=1(&|$)
+RewriteRule ^page\.html$ m-page.html [L]
+RewriteCond %{HTTP_USER_AGENT} (iPhone|Android|Mobile) [NC]
+RewriteCond %{QUERY_STRING} !(^|&)m=0(&|$)
+RewriteRule ^pageua\.html$ m-page.html [L]
+RewriteRule ^accent-(.*)$ Sant-e.html [L]
+<Files "label-x">
+ForceType text/html
+</Files>
+<Files "Santé">
+ForceType text/html
+</Files>
