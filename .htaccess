@@ -1,0 +1,26 @@
+AddDefaultCharset UTF-8
+DirectoryIndex index.html
+Options -Indexes
+
+# pages de libellés : adresses sans extension, servies comme du HTML
+<FilesMatch "^(Anniversaire|Cocarde|Concours|Eleveur|Exposition|Jalna|Santé|chaton|diplôme|début|femelle|pawpeds|race|snowshoe|études)$">
+ForceType text/html
+</FilesMatch>
+
+<IfModule mod_headers.c>
+Header append Vary User-Agent
+</IfModule>
+
+# version téléphone : même adresse, deux présentations (comme Blogger)
+# téléphone = ?m=1, ou navigateur de téléphone sans ?m=0
+RewriteEngine On
+RewriteRule ^ - [E=ISMOB:0]
+RewriteCond %{HTTP_USER_AGENT} (iPhone|iPod|Android.*Mobile|Windows\ Phone|BlackBerry|Opera\ Mini|IEMobile) [NC]
+RewriteCond %{QUERY_STRING} !(^|&)m=0(&|$)
+RewriteRule ^ - [E=ISMOB:1]
+RewriteCond %{QUERY_STRING} (^|&)m=1(&|$)
+RewriteRule ^ - [E=ISMOB:1]
+RewriteCond %{ENV:ISMOB} 1
+RewriteRule ^$ m/index.html [L]
+RewriteCond %{ENV:ISMOB} 1
+RewriteRule ^((?:20[0-9][0-9]/|p/|search/label/).+)$ m/$1 [L]
