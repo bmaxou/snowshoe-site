@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /m/
+Disallow: /mesure.php
 Sitemap: https://snowshoe.fr/sitemap.xml

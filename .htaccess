@@ -11,6 +11,22 @@ ForceType text/html
 Header append Vary User-Agent
 </IfModule>
 
+# copie de travail (tout autre nom de domaine que snowshoe.fr, par exemple snowshoe.bilan-mdph.fr) : jamais indexee
+SetEnvIf Host "^(www\.)?snowshoe\.fr$" SITE_REEL=1
+<IfModule mod_headers.c>
+Header set X-Robots-Tag "noindex, nofollow" env=!SITE_REEL
+</IfModule>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^(www\.)?snowshoe\.fr$ [NC]
+RewriteRule ^robots\.txt$ robots-ferme.txt [L]
+# une seule adresse pour le site : sans www
+RewriteCond %{HTTP_HOST} ^www\.snowshoe\.fr$ [NC]
+RewriteRule ^(.*)$ https://snowshoe.fr/$1 [R=301,L]
+# HTTPS : a activer (retirer les # des trois lignes) une fois le certificat gratuit actif sur OVH pour snowshoe.fr
+#RewriteCond %{HTTP_HOST} ^snowshoe\.fr$ [NC]
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^(.*)$ https://snowshoe.fr/$1 [R=301,L]
+
 # version téléphone : même adresse, deux présentations (comme Blogger)
 # téléphone = ?m=1, ou navigateur de téléphone sans ?m=0
 RewriteEngine On

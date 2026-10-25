@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Recuperation du code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ajout du compteur de visites (sans cookie)
+        run: python3 ajouter_mesure.py
 
       - name: Deploiement FTP vers OVH
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -25,3 +30,15 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            indexnow.py
+            ajouter_mesure.py
+            robots-ferme.txt
+
+      - name: Prevenir Bing des pages nouvelles ou modifiees (IndexNow, seulement quand snowshoe.fr est servi par ce site)
+        continue-on-error: true
+        env:
+          INDEXNOW_HOST: snowshoe.fr
+          INDEXNOW_KEY: 2f314b758db929aff534d564b03780e5
+          INDEXNOW_VERIFIER_CLE: '1'
+          BEFORE: ${{ github.event.before }}
+        run: python3 indexnow.py
