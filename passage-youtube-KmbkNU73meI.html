@@ -1,13 +1,24 @@
-<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>www. SnowShoe .fr</title>
-<link rel="stylesheet" href="style.css">
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
 <style>
-#gate-overlay{position:fixed;inset:0;background:#15181a;color:#ece9e0;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:inherit}
+body{margin:0;background:#fff;color:#666;font:normal normal 14px 'Trebuchet MS',Trebuchet,Verdana,sans-serif}
+.wrap{max-width:680px;margin:0 auto;padding:10px 20px 40px}
+.site-title{font-size:40px;line-height:1.2;margin:0;padding:22px 0 0}
+.site-title a{color:#000;text-decoration:none}
+.site-desc{font-size:18px;color:#000;margin:0 0 20px;padding-bottom:12px;border-bottom:1px dashed #bbb}
+h3{font:bold 22px 'Trebuchet MS',Trebuchet,Verdana,sans-serif;color:#cc6600;margin:20px 0 10px}
+p{line-height:1.5;margin:0 0 14px}
+.passage-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.passage-btn{display:inline-block;padding:9px 16px;background:#2288bb;color:#fff;text-decoration:none;border-radius:3px;font-size:14px}
+.passage-btn:hover{background:#33aaff;color:#fff;text-decoration:none}
+@media(max-width:600px){.site-title{font-size:28px}.site-desc{font-size:15px}}
+</style></head><body>
+<style>
+#gate-overlay{position:fixed;left:0;top:0;right:0;bottom:0;background:#15181a;color:#ece9e0;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif}
 #gate-overlay.hidden{display:none}
 #gate-box{max-width:320px;width:90%;text-align:center;padding:32px 24px;background:#1f2326;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
 #gate-box p{margin:0 0 16px;font-size:15px;color:#c9c6bd}
@@ -15,98 +26,31 @@
 #gate-box button{width:100%;padding:10px 12px;border-radius:6px;border:none;background:#5b7fd6;color:#fff;font-size:15px;cursor:pointer}
 #gate-error{color:#e07a7a;font-size:13px;min-height:18px;margin-top:8px}
 </style>
-</head>
-<body>
-<div id="gate-overlay">
-  <div id="gate-box">
-    <p>Aperçu privé — code d'accès requis</p>
-    <input type="password" id="gate-input" placeholder="Code" inputmode="numeric" autofocus>
-    <button id="gate-btn" type="button">Entrer</button>
-    <div id="gate-error"></div>
-  </div>
-</div>
+<div id="gate-overlay"><div id="gate-box"><p>Aperçu privé — code d'accès requis</p><input type="password" id="gate-input" placeholder="Code" inputmode="numeric"><button id="gate-btn" type="button">Entrer</button><div id="gate-error"></div></div></div>
 <script>
 (function(){
-  var KEY = "snowshoe_apercu_ok";
-  var overlay = document.getElementById("gate-overlay");
-  if (localStorage.getItem(KEY) === "1") { overlay.classList.add("hidden"); }
-  function tryUnlock(){
-    var v = document.getElementById("gate-input").value;
-    if (v === "1024") {
-      localStorage.setItem(KEY, "1");
-      overlay.classList.add("hidden");
-    } else {
-      document.getElementById("gate-error").textContent = "Code incorrect";
-    }
-  }
-  document.getElementById("gate-btn").addEventListener("click", tryUnlock);
-  document.getElementById("gate-input").addEventListener("keydown", function(e){
-    if (e.key === "Enter") tryUnlock();
-  });
+  var KEY="snowshoe_apercu_ok", ov=document.getElementById("gate-overlay");
+  try{ if(localStorage.getItem(KEY)==="1"){ ov.className="hidden"; } }catch(e){}
+  function go(){ if(document.getElementById("gate-input").value==="1024"){ try{localStorage.setItem(KEY,"1");}catch(e){} ov.className="hidden"; } else { document.getElementById("gate-error").textContent="Code incorrect"; } }
+  document.getElementById("gate-btn").addEventListener("click",go);
+  document.getElementById("gate-input").addEventListener("keydown",function(e){ if(e.key==="Enter") go(); });
 })();
 </script>
-<header class="site-header">
-  <a href="index.html" class="site-title">www. SnowShoe .fr</a>
-  <p class="tagline">chats de race SnowShoe, petit élevage parisien en devenir</p>
-</header>
-<div class="layout">
-  <main class="content">
 
-<article class="post">
-  <h1 class="post-title">Vous quittez un instant le site</h1>
-  <div class="post-body">
-    <p>Le film sur YouTube s'ouvre dans un instant.</p>
-    <p class="passage-actions"><a class="passage-btn" id="passage-go" href="https://www.youtube.com/watch?v=KmbkNU73meI">Voir le film sur YouTube</a> <a class="passage-btn" href="index.html">Retour à l'accueil</a></p>
-  </div>
-</article>
-<style>
-.passage-actions{display:flex;flex-wrap:wrap;gap:12px}
-.passage-btn{display:inline-block;padding:10px 18px;border-radius:6px;background:var(--accent);color:#fff;font-size:15px}
-.passage-btn:hover{background:var(--accent-dark);color:#fff;text-decoration:none}
-</style>
-</main>
-  <aside class="sidebar">
-    <div class="widget">
-      <h4>Mail :</h4>
-      <p><a href="mailto:MailSnowShoe@gmail.com">MailSnowShoe@gmail.com</a></p>
-    </div>
-    <div class="widget">
-      <h4>aucune publicité ici</h4>
-      <img src="images/no-pub.jpg" alt="" style="max-width:100%;height:auto;width:160px;">
-    </div>
-    <div class="widget">
-      <ul class="plain-list">
-        <li><a href="standards.html">Standards</a></li>
-        <li><a href="timeline.html">TimeLine</a></li>
-      </ul>
-    </div>
-    <div class="widget">
-      <h4>Articles les plus consultés</h4>
-      <ul class="plain-list"><li><a href="2015-03-snowshoe-bois-chouette-brigitte-cohu.html">L’incroyable histoire réelle de Jalna</a></li><li><a href="2015-02-jalna-snowshoe-du-bois-de-la-chouette.html">Jalna est morte</a></li><li><a href="2014-12-snowshoe-jalna.html">Jalna</a></li><li><a href="2014-12-cocarde-pawpeds.html">Cocarde PawPeds</a></li><li><a href="2014-11-jalna.html">1ère réservation : Jalna</a></li><li><a href="2014-11-snowshoe-pawpeds.html">Le Départ : PawPeds &amp; SnowShoe</a></li></ul>
-    </div>
-    <div class="widget">
-      <h4>Suivre</h4>
-      <form class="subscribe-form" action="#" method="post">
-        <input type="email" placeholder="Votre adresse mail" required>
-        <button type="submit">S'abonner</button>
-      </form>
-    </div>
-    <div class="widget logo-widget">
-      <img src="images/logo-snowshow.jpg" alt="" style="max-width:100%;height:auto;width:140px;">
-    </div>
-  </aside>
-</div>
-<footer class="site-footer">
-  <p>www.snowshoe.fr &mdash; élevage félin SnowShoe</p>
-</footer>
+<div class="wrap"><h1 class="site-title"><a href="/">www. SnowShoe .fr</a></h1>
+<p class="site-desc">chats de race SnowShoe, petit élevage parisien en devenir</p>
+<h3>Vous quittez un instant le site</h3>
+<p>Le film sur YouTube s'ouvre dans un instant.</p>
+<p class="passage-actions"><a class="passage-btn" id="passage-go" href="https://youtube.com/v/KmbkNU73meI?autohide=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;autoplay=1">Voir le film sur YouTube</a> <a class="passage-btn" href="/">Retour à l'accueil</a></p></div>
 <script>
 (function(){
-  var URL = "https://www.youtube.com/watch?v=KmbkNU73meI";
-  var FLAG = "snowshoe_passage_passage-youtube-KmbkNU73meI";
+  var URL = "https://youtube.com/v/KmbkNU73meI?autohide=1&modestbranding=1&rel=0&showinfo=0&autoplay=1";
+  var FLAG = "snowshoe_passage_" + "passage-youtube-KmbkNU73meI";
   var ok = false, done = false;
   try { ok = localStorage.getItem("snowshoe_apercu_ok") === "1"; } catch(e) {}
   try { done = sessionStorage.getItem(FLAG) === "1"; } catch(e) { done = true; ok = false; }
-  if (ok && !done) {
+  document.getElementById("passage-go").href = URL;
+  if (false || (ok && !done)) {
     setTimeout(function(){
       try { sessionStorage.setItem(FLAG, "1"); } catch(e) { return; }
       location.href = URL;
@@ -114,5 +58,4 @@
   }
 })();
 </script>
-</body>
-</html>
+</body></html>

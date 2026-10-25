@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>www. SnowShoe .fr</title>
+<link href="/favicon.ico" rel="icon" type="image/x-icon">
+<style>
+body{margin:0;background:#fff;color:#666;font:normal normal 14px 'Trebuchet MS',Trebuchet,Verdana,sans-serif}
+.wrap{max-width:680px;margin:0 auto;padding:10px 20px 40px}
+.site-title{font-size:40px;line-height:1.2;margin:0;padding:22px 0 0}
+.site-title a{color:#000;text-decoration:none}
+.site-desc{font-size:18px;color:#000;margin:0 0 20px;padding-bottom:12px;border-bottom:1px dashed #bbb}
+h3{font:bold 22px 'Trebuchet MS',Trebuchet,Verdana,sans-serif;color:#cc6600;margin:20px 0 10px}
+p{line-height:1.5;margin:0 0 14px}
+.passage-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.passage-btn{display:inline-block;padding:9px 16px;background:#2288bb;color:#fff;text-decoration:none;border-radius:3px;font-size:14px}
+.passage-btn:hover{background:#33aaff;color:#fff;text-decoration:none}
+@media(max-width:600px){.site-title{font-size:28px}.site-desc{font-size:15px}}
+</style></head><body>
+<style>
+#gate-overlay{position:fixed;left:0;top:0;right:0;bottom:0;background:#15181a;color:#ece9e0;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif}
+#gate-overlay.hidden{display:none}
+#gate-box{max-width:320px;width:90%;text-align:center;padding:32px 24px;background:#1f2326;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+#gate-box p{margin:0 0 16px;font-size:15px;color:#c9c6bd}
+#gate-box input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid #444;background:#0f1112;color:#ece9e0;font-size:16px;text-align:center;margin-bottom:12px}
+#gate-box button{width:100%;padding:10px 12px;border-radius:6px;border:none;background:#5b7fd6;color:#fff;font-size:15px;cursor:pointer}
+#gate-error{color:#e07a7a;font-size:13px;min-height:18px;margin-top:8px}
+</style>
+<div id="gate-overlay"><div id="gate-box"><p>Aperçu privé — code d'accès requis</p><input type="password" id="gate-input" placeholder="Code" inputmode="numeric"><button id="gate-btn" type="button">Entrer</button><div id="gate-error"></div></div></div>
+<script>
+(function(){
+  var KEY="snowshoe_apercu_ok", ov=document.getElementById("gate-overlay");
+  try{ if(localStorage.getItem(KEY)==="1"){ ov.className="hidden"; } }catch(e){}
+  function go(){ if(document.getElementById("gate-input").value==="1024"){ try{localStorage.setItem(KEY,"1");}catch(e){} ov.className="hidden"; } else { document.getElementById("gate-error").textContent="Code incorrect"; } }
+  document.getElementById("gate-btn").addEventListener("click",go);
+  document.getElementById("gate-input").addEventListener("keydown",function(e){ if(e.key==="Enter") go(); });
+})();
+</script>
+
+<div class="wrap"><h1 class="site-title"><a href="/">www. SnowShoe .fr</a></h1>
+<p class="site-desc">chats de race SnowShoe, petit élevage parisien en devenir</p>
+<h3>Vous quittez un instant le site</h3>
+<p>Suivre s'ouvre dans un instant.</p>
+<p class="passage-actions"><a class="passage-btn" id="passage-go" href="http://fr.pinterest.com/wwwSnowShoeFR/">Voir Suivre</a> <a class="passage-btn" href="/">Retour à l'accueil</a></p></div>
+<script>
+(function(){
+  var URL = "http://fr.pinterest.com/wwwSnowShoeFR/";
+  var FLAG = "snowshoe_passage_" + "passage-fr-pinterest-com-wwwsnowshoefr";
+  var ok = false, done = false;
+  try { ok = localStorage.getItem("snowshoe_apercu_ok") === "1"; } catch(e) {}
+  try { done = sessionStorage.getItem(FLAG) === "1"; } catch(e) { done = true; ok = false; }
+  document.getElementById("passage-go").href = URL;
+  if (false || (ok && !done)) {
+    setTimeout(function(){
+      try { sessionStorage.setItem(FLAG, "1"); } catch(e) { return; }
+      location.href = URL;
+    }, 1000);
+  }
+})();
+</script>
+</body></html>
