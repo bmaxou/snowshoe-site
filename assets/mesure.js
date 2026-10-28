@@ -2,6 +2,8 @@
    Envoie à /mesure.php (même site) la page lue, l'origine de la visite, le type d'appareil et quelques actions.
    Aucune donnée n'est envoyée à un service extérieur. Voir mesure.php et statistiques.php. */
 (function () {
+  // équipe du cabinet : page « exclure-mes-visites » (réglage mémorisé dans le navigateur, sans cookie)
+  try { if (localStorage.getItem('mesure-exclu') === '1') { return; } } catch (e) {}
   var B = '/mesure.php';
   function envoi(o) {
     try {
