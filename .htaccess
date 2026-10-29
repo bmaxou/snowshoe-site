@@ -21,14 +21,18 @@ RewriteCond %{HTTP_HOST} !^(www\.)?snowshoe\.fr$ [NC]
 RewriteRule ^robots\.txt$ robots-ferme.txt [L]
 # une seule adresse pour le site : sans www
 RewriteCond %{HTTP_HOST} ^www\.snowshoe\.fr$ [NC]
-RewriteCond %{THE_REQUEST} ^[A-Z]+\s(\S*)
-RewriteRule ^ https://snowshoe.fr%1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s([^\s?]*)
+RewriteRule ^ https://snowshoe.fr%1 [R=301,L,NE]
 # HTTPS : toute visite en http://snowshoe.fr est renvoyee vers https://snowshoe.fr (certificat OVH actif depuis le 28/10/2026)
 RewriteCond %{HTTP_HOST} ^snowshoe\.fr$ [NC]
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteCond %{THE_REQUEST} ^[A-Z]+\s(\S*)
-RewriteRule ^ https://snowshoe.fr%1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s([^\s?]*)
+RewriteRule ^ https://snowshoe.fr%1 [R=301,L,NE]
+# une seule adresse pour l'accueil : /index.html -> / (seulement la demande du visiteur, pas les reecritures internes)
+RewriteCond %{HTTP_HOST} ^snowshoe\.fr$ [NC]
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?]
+RewriteRule ^index\.html$ https://snowshoe.fr/ [R=301,L]
 
 # version téléphone : même adresse, deux présentations (comme Blogger)
 # téléphone = ?m=1, ou navigateur de téléphone sans ?m=0
